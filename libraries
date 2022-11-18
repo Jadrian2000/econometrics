@@ -1,0 +1,7 @@
+library(tidyverse)
+library(magrittr)
+library(wooldridge)
+library(stargazer)
+library(car)
+library(lmtest)
+library(AER)
