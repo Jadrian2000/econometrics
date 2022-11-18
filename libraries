@@ -1,3 +1,8 @@
+pacman::p_load("tidyverse",
+               "wooldridge",
+               "stargazer")
+
+
 library(tidyverse)
 library(magrittr)
 library(wooldridge)
