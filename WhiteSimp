@@ -1,0 +1,15 @@
+#Prueba White Simplificada
+#Paso 0 (Modelo)
+modelo <- lm(formula = Y ~ X1 + X2, #X3, X4, etc
+             data = datos)
+
+#Paso 1 (Residuales al Cuadrado)
+u2 <- resid(modelo)^2
+y_hat <- fitted(modelo)
+
+
+#Paso 2 (Regresión Auxiliar)
+reg_auxiliar_whitesimp <- lm(formula = u2 ~  y-hat + I(y_hat^2),
+                         data = base)
+
+#Paso 3 Stargazer
