@@ -1,0 +1,11 @@
+## 2SLS
+#Paso 1 Modelo
+mod_2sls <- ivreg(Y ~ variable1 + variable2 | 
+                    variable_instrumento + variable2,
+                  )
+
+#Paso 2 Modelo Residuales
+modelo_res <- lm(resid(mod_2sls) ~  variable2 + variableinstrumento)
+
+#Calcular R2
+pchisq()
