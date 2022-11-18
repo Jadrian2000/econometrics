@@ -1,0 +1,10 @@
+#Create a Base
+
+#Cargar datos
+data(datos)
+
+#Seleccionar y modificar variables
+base <- datos %>%
+  mutate(litros = militros / 1000,
+         ramoflores = totalflores / 12) %>%
+  select(variable1, variable2, litros) #e.t.c
