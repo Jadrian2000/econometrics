@@ -1,0 +1,14 @@
+# Modelo base
+(modelo_base <- coeftest(modelo))
+
+# Modelo BP
+(bp <- coeftest(modelo,
+                vcov = hccm(modelo, type = "hc2")))
+
+# Modelo White
+(white <- coeftest(modelo,
+                   vcov = hccm(modelo, type = "hc0")))
+
+# Modelo White simplificado
+(whitesimp <- coeftest(modelo,
+                       vcov = hccm))
