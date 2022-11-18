@@ -1,0 +1,14 @@
+##Prueba White
+#Paso 0 (Modelo)
+modelo <- lm(formula = Y ~ X1 + X2, #X3, X4, etc
+             data = datos)
+
+#Paso 1 (Residuales al Cuadrado)
+u2 <- resid(modelo)^2
+
+#Paso 2 (Regresión Auxiliar)
+reg_auxiliar_white <- lm(formula = u2 ~  X1 + X2 + I(X1^2) + I(X2^2) +
+                         X1*X2, #Variables, al cuadrado y cruzados
+                   data = base)
+
+#Paso 3 Stargazer
