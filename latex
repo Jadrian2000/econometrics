@@ -1,0 +1,3 @@
+#Crear modelo en Latex
+
+$$ln(wage)=(\beta_0+\delta_3)+(\beta_1+\beta_4)educ+u$$
