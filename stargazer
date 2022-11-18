@@ -1,0 +1,6 @@
+#Create Stargazer Table
+
+#Stargazer Table
+stargazer(modelo_1, modelo_2, #Uno o más modelos
+          digits = 3,
+          type = "text")
