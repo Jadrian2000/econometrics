@@ -1,0 +1,18 @@
+# Variables Instrumentales  #Variable 2 presenta endogeneidad
+estimadores <- with(base,variable1,variable2)/cov(variable2,variable3)
+
+modelo_iv = ivreg(Y ~ variable1 + variable2 | 
+                    variable_instrumento + variable2,
+                  data = base)
+                 #Se susituye variable 1 ya que tiene endogeneidad
+
+#Pruebas de Endogeneidad
+#Paso 1 Modelo Reducido Explica variable del futuro modelo
+mod_red <- lm(Y ~ X1 + X2 + X3,
+              data = base)
+
+#Paso 2 Forma Estructural 
+mod_estruc <- lm(Z ~ Y + X2 + X3 + Y1 + Y2 + resid(mod_red),
+                 data = base)
+
+#Paso 3 Stargazer para ver t
